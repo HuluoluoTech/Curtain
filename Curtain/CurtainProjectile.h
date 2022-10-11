@@ -33,6 +33,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Dodgeball, meta = (AllowPrivateAccess = "true"))
 		UProjectileMovementComponent* ProjectileMovement;
 
+	UPROPERTY(EditAnywhere, Category = Sound)
+		class USoundBase* BounceSound;
+
 	FORCEINLINE class UProjectileMovementComponent* GetProjectileMovementComponent() const
 	{
 		return ProjectileMovement;

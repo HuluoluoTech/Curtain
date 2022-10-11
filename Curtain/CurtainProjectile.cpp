@@ -4,6 +4,7 @@
 #include "CurtainProjectile.h"
 #include "CurtainCharacter.h"
 #include "HealthComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ACurtainProjectile::ACurtainProjectile()
@@ -30,7 +31,7 @@ void ACurtainProjectile::BeginPlay()
 	Super::BeginPlay();
 	
 	// Set Life Span
-	SetLifeSpan(5.0f);
+	SetLifeSpan(2.0f);
 }
 
 // Called every frame
@@ -42,9 +43,18 @@ void ACurtainProjectile::Tick(float DeltaTime)
 
 void ACurtainProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
+	// NormalImpulse
+	// : the direction and magnitude
+
+
 	ACurtainCharacter* Player = Cast<ACurtainCharacter>(OtherActor);
 	if (Player != nullptr)
 	{
+		if (BounceSound != nullptr && NormalImpulse.Size() > 600.0f)
+		{
+			UGameplayStatics::PlaySoundAtLocation(this, BounceSound, GetActorLocation(), 1.0f, FMath::RandRange(0.7f, 1.3f));
+		}
+
 		UHealthComponent* HealthComponent = Player->FindComponentByClass<UHealthComponent>();
 		if (HealthComponent != nullptr)
 		{
