@@ -55,6 +55,9 @@ void ACurtainProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 			UGameplayStatics::PlaySoundAtLocation(this, BounceSound, GetActorLocation(), 1.0f, FMath::RandRange(0.7f, 1.3f));
 		}
 
+		// Particle
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitParticle, GetActorTransform());
+
 		UHealthComponent* HealthComponent = Player->FindComponentByClass<UHealthComponent>();
 		if (HealthComponent != nullptr)
 		{

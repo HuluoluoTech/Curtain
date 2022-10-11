@@ -36,6 +36,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = Sound)
 		class USoundBase* BounceSound;
 
+	UPROPERTY(EditAnywhere, Category = Particle)
+		class UParticleSystem* HitParticle;
+
 	FORCEINLINE class UProjectileMovementComponent* GetProjectileMovementComponent() const
 	{
 		return ProjectileMovement;
