@@ -3,6 +3,7 @@
 Status: Pre-Release
 
 ### Features
+- [x] Main Menu
 - [x] Player Animation
 - [x] Enemy Class
 - [x] Projectile
