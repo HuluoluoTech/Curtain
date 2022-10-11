@@ -4,8 +4,9 @@
 - [x] Player Animation
 - [x] Enemy Class
 - [x] Projectile
-- [x] Level
+- [x] Level Display
 - [x] HUD
 - [x] Restart Widget
 - [x] Sound
-- [ ] particle System
+- [x] particle System
+- [x] New Level
