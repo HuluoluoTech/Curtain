@@ -4,6 +4,7 @@
 #include "VictoryBox.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "CurtainCharacter.h"
+#include "Kismet/GameplayStatics.h"
 
 
 // Sets default values
@@ -43,10 +44,12 @@ void AVictoryBox::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Ot
 
 	if (Cast<ACurtainCharacter>(OtherActor))
 	{
-		UKismetSystemLibrary::QuitGame(GetWorld(),
+		/*UKismetSystemLibrary::QuitGame(GetWorld(),
 			nullptr,
 			EQuitPreference::Quit,
-			true);
+			true);*/
+
+		UGameplayStatics::OpenLevel(this, FName("Level1"));
 	}
 }
 
