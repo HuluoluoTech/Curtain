@@ -1,5 +1,7 @@
 # Curtain
 
+Status: Pre-Release
+
 ### Features
 - [x] Player Animation
 - [x] Enemy Class
