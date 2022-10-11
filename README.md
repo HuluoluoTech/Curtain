@@ -7,4 +7,5 @@
 - [x] Level
 - [x] HUD
 - [x] Restart Widget
-- [ ] Sound
+- [x] Sound
+- [ ] particle System
