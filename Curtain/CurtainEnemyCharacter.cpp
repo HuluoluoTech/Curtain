@@ -40,21 +40,21 @@ void ACurtainEnemyCharacter::Tick(float DeltaTime)
 	bCanSeePlayer = LookAtActor(PlayerCharacter);
 	if (bCanSeePlayer != bPreviousCanSeePlayer)
 	{
-		if (bCanSeePlayer)
-		{
-			// start throwing
-			GetWorldTimerManager().SetTimer(ThrowTimerHandle,
-				this,
-				&ACurtainEnemyCharacter::ThrowBall,
-				ThrowingInterval,
-				true,
-				ThrowingDelay);
-		}
-		else
-		{
-			// stop Throwing
-			GetWorldTimerManager().ClearTimer(ThrowTimerHandle);
-		}
+		//if (bCanSeePlayer)
+		//{
+		//	// start throwing
+		//	GetWorldTimerManager().SetTimer(ThrowTimerHandle,
+		//		this,
+		//		&ACurtainEnemyCharacter::ThrowBall,
+		//		ThrowingInterval,
+		//		true,
+		//		ThrowingDelay);
+		//}
+		//else
+		//{
+		//	// stop Throwing
+		//	GetWorldTimerManager().ClearTimer(ThrowTimerHandle);
+		//}
 
 	}
 	bPreviousCanSeePlayer = bCanSeePlayer;
