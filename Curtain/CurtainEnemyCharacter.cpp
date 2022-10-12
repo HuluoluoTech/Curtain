@@ -8,6 +8,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
+#include "CurtainGameInstance.h"
 
 // Sets default values
 ACurtainEnemyCharacter::ACurtainEnemyCharacter()
@@ -24,6 +25,10 @@ void ACurtainEnemyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// Get GameInstance Level Info
+	UCurtainGameInstance* CurtainGameInstance = Cast<UCurtainGameInstance>(GetGameInstance());
+	float CurrentXPInLevel = CurtainGameInstance->GetXP();
+	UE_LOG(LogTemp, Warning, TEXT("Current XP in Level : %f"), CurrentXPInLevel);
 }
 
 // Called every frame
